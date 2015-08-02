@@ -1,0 +1,152 @@
+<DOCTYPE! html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </head>
+<body>
+<div class="challenge-header">
+    <div class="header-inner">
+        <div class="logo">
+            <a href="http://www.hudl.com/">
+                <img src="http://i.imgur.com/engpsmK.png?1" width="106" height="36">
+            </a>
+        </div>
+        <div class="header-nav">
+            <a href="http://get.hudl.com/about/" id="link">
+                <div class="navbar-item">
+                    <div class="text-nav">About</div>
+                </div></a>
+            <a href="http://get.hudl.com/join/" id="link">
+                <div class="navbar-item-careers">
+                    <div class="text-nav-careers">Careers</div>
+                </div></a>
+        </div>
+    </div>
+</div>
+<div class="maincontent">
+    <div class="introduction">
+
+    </div>
+    <div class="problemlist">
+        <div class="listtitle">Problems</div>
+            <ul class="listcontainer">
+                    <li>
+                        <div class="problemnumber"><a href="#problem1">Problem 1</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="problemnumber"><a href="#problem2">Problem 2</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="problemnumber"><a href="#problem3">Problem 3</a>
+                        </div>
+                    </li>
+            </ul>
+    </div>
+    <div class="mainproblemcontainer">
+        <ul class="problemstable">
+            <a name="problem1"></a>
+            <li class="problemitem">
+                <div class="problemcontainer">
+                    <div class="title">
+                        <h3 class="name">
+                            Office Space
+                        </h3>
+                    </div>
+                    <div class="content">
+                        <p>This task is very simple. Given a string S of length n and q queries each query is on the format i j k which means
+                            sort the substring consisting of the characters from i to j in non-decreasing order if k = 1 or in non-increasing order if k = 0.
+                            Output the final string after applying the queries.</p>
+
+                        <div class="input">
+                            Input
+                            The first line will contain two integers n, q (1 ≤ n ≤ 105, 0 ≤ q ≤ 50 000), the length of the string and the number of queries respectively.
+                            Next line contains a string S itself. It contains only lowercase English letters.
+
+                            Next q lines will contain three integers each i, j, k (1 ≤ i ≤ j ≤ n, ).
+                        </div>
+                        <div class="output">
+                            Output
+                            Output one line, the string S after applying the queries.
+                        </div>
+                   
+                    <a href="#"><div class="submit-file" onclick="submitQOne()"><h6>Submit</h6></div></a>
+
+                    <input type="file" id="inp" name="inp"/>
+
+                     <a href="#"><div class="upload-file" onclick="uploadQOne()"><h6>Attach</h6></div></a>
+
+                     <div id="email-container">
+                        <form id="email-form" method="post">
+                            <div id="email-container-box">
+                                <input type="text" id="input-email" name="query" onfocus="emailContainerField('focus')" onblur="emailContainerField('blur')">
+                             </div>
+                     </div>
+
+                    </div>
+
+                </div>
+            </li>
+            <a name="problem2"></a>
+            <li class="problemitem">
+                <div class="problemcontainer">
+                    <div class="title">
+                        <h3 class="name">
+                            Problem 2
+                        </h3>
+                    </div>
+                    <div class="content">
+
+                    </div>
+                    <div class="submissioncontainer">
+
+                    </div>
+                </div>
+            </li>
+            <a name="problem3"></a>
+            <li class="problemitem">
+                <div class="problemcontainer">
+                    <div class="title">
+                        <h3 class="name">
+                            Problem 3
+                        </h3>
+                    </div>
+                    <div class="content">
+
+                    </div>
+                    <div class="submissioncontainer">
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="/script.js"></script>
+<script> 
+  function handleFileSelect(evt)
+{
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++)
+    {
+
+        var reader = new FileReader();
+        reader.onload = function(event)
+        {
+            // NOTE: event.target point to FileReader
+            var contents = event.target.result;
+            console.log(contents);
+            var lines = contents.split('\n');
+        };
+
+        reader.readAsText(f);
+    }
+}
+
+  document.getElementById('inp').addEventListener('change', handleFileSelect, false);
+</script>
+</body>
+    </html>

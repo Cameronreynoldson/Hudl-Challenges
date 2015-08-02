@@ -1,0 +1,67 @@
+tr:hover{
+	color: white !important;
+	background-color: #F58B52;
+	cellspacing: 10px;
+}
+
+#table-top{
+	margin: auto;
+	border-style: solid;
+  border-color: lightgray;
+  border-radius: 10px;
+  width: 80%;
+  height: 40%;
+  margin-top: 7%;
+  text-align: left; 
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 8px
+}
+
+#table-top tr{
+	text-align: center;
+}
+
+#logo{
+	margin: auto;
+	padding-left: 48%;
+	padding-top: 70px;
+	width: 50px;
+	height: 50px;
+	padding-bottom: 20px;
+}
+
+.logo{
+	margin-top: 10%;
+	margin: auto;
+	margin-bottom:-5%;
+	width: 80%;
+	border-bottom: 2px solid lightgray;
+}
+
+
+#gillysTable{
+	margin: auto;
+	position: static;
+	border-style: solid;
+  border-color: lightgray;
+  border-radius: 20px;
+  border-spacing: 10px;
+  width: 80%;
+  height: 70%;
+  margin-top: 10px;
+  text-align: left; 
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  padding-top: 0;
+}
+
+#top{
+	color: #F58B52;
+	text-align: left;
+}
+
+#top:hover{
+	color: white !important;
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Dashboard</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    Parse.initialize("YPEAbMqc4tSM65NGlz0rRFDpxtYbxM6WANp9ptRe", "1n955NtaR8fewwhdZtyjymNrS1TLNZRXC7guGUUV");
+
+var data = retrieveAllData();
+createTable(data);
+
+function retrieveAllData() {
+  var person = Parse.Object.extend("People");
+  var query = new Parse.Query(person);
+  console.log(query);
+  var peopleArray = [];
+
+  query.find({
+    success: function(results) {
+      for(var i = 0; i < results.length; i++) {
+          var currentPerson = results[i];
+          var personObject = new CreateUser(currentPerson.get("email"), currentPerson.get("problem1Passed")       , currentPerson.get("problem2Passed"), currentPerson.get("problem3Passed"));
+          peopleArray.push(personObject);
+          console.log("Email: " +personObject.email+ " Problem 1: " +personObject.problem1 +
+              " Problem2: " + personObject.problem2+ " Problem3: " + personObject.problem3);
+          pushToTable(personObject);
+      }
+    },
+    error: function(error) {
+      alert("Error: " + error.code + " " + error.message);
+    }
+  });
+  return peopleArray;
+}
+
+// var user = new CreateUser(email.....);
+function CreateUser(email, problem1, problem2, problem3) {
+  this.email = email;
+  if(problem1 === undefined) {
+    this.problem1 = "Not submitted";
+  }
+  else {
+    this.problem1 = problem1;
+  }
+  
+  if(problem2 === undefined) {
+    this.problem2 = "Not submitted";
+  }
+  else {
+    this.problem2 = problem2;
+  }
+
+  if(problem3 === undefined) {
+    this.problem3 = "Not submitted";
+  }
+  else {
+    this.problem3 = problem3;
+  }
+}
+
+function createTable(data) {
+    for(var i = 0; i < data.length; i++) {
+        var current = data[i];
+        pushToTable(current);
+    }
+}
+function pushToTable(data) {
+
+    var htmlOutput = '<tr style="color: #8D9597;">'
+        + tdBlock(data.email)
+        + tdBlock(data.problem1)
+        + tdBlock(data.problem2)
+        + tdBlock(data.problem3)
+        + '</tr>';
+
+    $("#gillysTable tr").last().after(htmlOutput);
+}
+
+function tdBlock(text){
+    return '<td style="text-align: left">' + text + '</td>';
+}
+
+  </script>
+            <div class="logo">
+                <a href="http://www.hudl.com/">
+                    <img src="http://i.imgur.com/ZJCNMcO.png" width="50" height="50" id="logo">
+                </a>
+            </div>
+
+  <table id="table-top">
+    <tr id="top">
+        <td style="width: 40%">EMAIL</td>
+        <td>PROBLEM 1</td>
+        <td>PROBLEM 2</td>
+        <td>PROBLEM 3</td>
+    </tr>
+</table>
+  <table id="gillysTable">
+    <tr id="top">
+        
+    </tr>
+</table>
+</body>
+
+
+
+</html>

@@ -1,0 +1,201 @@
+<DOCTYPE! html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block javascript %}
+    <script type="text/javascript">
+    {% include "process-code.js" %}
+    </script>
+    <!-- The contents of myscript.js will be loaded inside the script tag -->
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+    <script> 
+    Parse.initialize("YPEAbMqc4tSM65NGlz0rRFDpxtYbxM6WANp9ptRe", "1n955NtaR8fewwhdZtyjymNrS1TLNZRXC7guGUUV");
+    </script>
+    <title>Challenges</title>
+</head>
+<body>
+    <div class="challenge-header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="http://www.hudl.com/">
+                    <img src="http://i.imgur.com/engpsmK.png?1" width="106" height="36">
+                </a>
+            </div>
+            <div class="header-nav">
+                <a href="http://get.hudl.com/about/" id="link">
+                    <div class="navbar-item">
+                        <div class="text-nav">About</div>
+                    </div></a>
+                    <a href="http://get.hudl.com/join/" id="link">
+                        <div class="navbar-item-careers">
+                            <div class="text-nav-careers">Careers</div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontent">
+                <div class="introduction">
+
+                </div>
+                <div class="problemlist">
+                    <div class="listtitle">Problems</div>
+                    <ul class="listcontainer">
+                        <li>
+                            <div class="problemnumber"><a href="#problem1">Problem 1</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="problemnumber"><a href="#problem2">Problem 2</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="problemnumber"><a href="#problem3">Problem 3</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mainproblemcontainer">
+                    <ul class="problemstable">
+                        <a name="problem1"></a>
+                        <li class="problemitem">
+                            <div class="problemcontainer">
+                                <div class="title" style="overflow: auto" id="title">
+                                    <div class="checkmark-1" id="checkmark-1">
+                                        <img src="http://i.imgur.com/Q0WHClf.png" id="checkmark" width="30" height="30">
+                                    </div>
+                                    <div class="x-button-1" id="x-1">
+                                        <img src="http://i.imgur.com/rIPjBA9.png" id="x" width="30" height="30">
+                                    </div>
+                                    <h3 class="name">
+                                        Problem 1
+                                    </h3>
+                                </div>
+                                <div class="content">
+                                    <p>This task is very simple. Given a string S of length n and q queries each query is on the format i j k which means
+                                        sort the substring consisting of the characters from i to j in non-decreasing order if k = 1 or in non-increasing order if k = 0.
+                                        Output the final string after applying the queries.</p>
+
+                                        <div class="input">
+                                            <h2>Input</h2>
+                                            The first line will contain two integers n, q (1 ≤ n ≤ 105, 0 ≤ q ≤ 50 000), the length of the string and the number of queries respectively.
+                                            Next line contains a string S itself. It contains only lowercase English letters.
+
+                                            Next q lines will contain three integers each i, j, k (1 ≤ i ≤ j ≤ n, ).
+                                        </div>
+                                        <div class="output">
+                                            <h2>Output</h2>
+                                            Output one line, the string S after applying the queries.
+                                        </div>
+
+                                        <a href="#problem1"><div class="submit-file" id="submit-code-1" onclick="submitCode(1)"><h6>Submit</h6></div></a>
+                                        <input type="file" id="inp-1"/>
+
+                                        <a href="#problem1"><div class="upload-file" onclick="uploadQOne(1)"><h6>Attach</h6></div></a>
+
+                                        <div id="email-container">
+                                            <form id="email-form" method="post">
+                                                <div id="email-container-box">
+                                                    <input type="text" id="input-email-1" name="query" onfocus="emailContainerField('focus',1)" onblur="emailContainerField('blur',1)">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <a name="problem2"></a>
+                                <li class="problemitem">
+                                    <div class="problemcontainer">
+                                        <div class="title" id="title">
+                                            <div class="checkmark-2" id="checkmark-2">
+                                        <img src="http://i.imgur.com/Q0WHClf.png" id="checkmark" width="30" height="30">
+                                    </div>
+                                    <div class="x-button-2" id="x-2">
+                                        <img src="http://i.imgur.com/rIPjBA9.png" id="x" width="30" height="30">
+                                    </div>
+                                            <h3 class="name">
+                                                Problem 2
+                                            </h3>
+                                        </div>
+                                        <div class="content">
+                                            <p>This task is very simple. Given a string S of length n and q queries each query is on the format i j k which means
+                                        sort the substring consisting of the characters from i to j in non-decreasing order if k = 1 or in non-increasing order if k = 0.
+                                        Output the final string after applying the queries.</p>
+                                        </div>
+                                        <div class="input">
+                                            <h2>Input</h2>
+                                            The first line will contain two integers n, q (1 ≤ n ≤ 105, 0 ≤ q ≤ 50 000), the length of the string and the number of queries respectively.
+                                            Next line contains a string S itself. It contains only lowercase English letters.
+
+                                            Next q lines will contain three integers each i, j, k (1 ≤ i ≤ j ≤ n, ).
+                                        </div>
+                                        <div class="output">
+                                            <h2>Output</h2>
+                                            Output one line, the string S after applying the queries.
+                                        </div>
+
+                                        <div class="submissioncontainer">
+
+                                        </div>
+                                    </div>
+                                    <a href="#problem2"><div class="submit-file" id="submit-code-2" onclick="submitCode(2)"><h6>Submit</h6></div></a>
+                                        <input type="file" id="inp-2"/>
+                                        <a href="#problem2"><div class="upload-file" onclick="uploadQOne(2)"><h6>Attach</h6></div></a>
+                                        <div id="email-container">
+                                            <form id="email-form" method="post">
+                                                <div id="email-container-box">
+                                                    <input type="text" id="input-email-2" name="query" onfocus="emailContainerField('focus',2)" onblur="emailContainerField('blur',2)">
+                                                </div>
+                                            </div>  
+                                </li>
+                                <a name="problem3"></a>
+                                <li class="problemitem">
+                                    <div class="problemcontainer">
+                                        <div class="title" id="title">
+                                            <div class="checkmark-3" id="checkmark-3">
+                                        <img src="http://i.imgur.com/Q0WHClf.png" id="checkmark" width="30" height="30">
+                                    </div>
+                                    <div class="x-button-3" id="x-3">
+                                        <img src="http://i.imgur.com/rIPjBA9.png" id="x" width="30" height="30">
+                                    </div>
+                                            <h3 class="name">
+                                                Problem 3
+                                            </h3>
+                                        </div>
+                                        <div class="content">
+                                            <p>This task is very simple. Given a string S of length n and q queries each query is on the format i j k which means
+                                        sort the substring consisting of the characters from i to j in non-decreasing order if k = 1 or in non-increasing order if k = 0.
+                                        Output the final string after applying the queries.</p>
+                                        </div>
+                                        <div class="input">
+                                            <h2>Input</h2>
+                                            The first line will contain two integers n, q (1 ≤ n ≤ 105, 0 ≤ q ≤ 50 000), the length of the string and the number of queries respectively.
+                                            Next line contains a string S itself. It contains only lowercase English letters.
+
+                                            Next q lines will contain three integers each i, j, k (1 ≤ i ≤ j ≤ n, ).
+                                        </div>
+                                        <div class="output">
+                                            <h2>Output</h2>
+                                            Output one line, the string S after applying the queries.
+                                        </div>
+                                        <div class="submissioncontainer">
+
+                                        </div>
+                                    </div>
+                                    <a href="#problem3"><div class="submit-file" id="submit-code-3" onclick="submitCode(3)"><h6>Submit</h6></div></a>
+                                        <input type="file" id="inp-3"/>
+                                        <a href="#problem3"><div class="upload-file" onclick="uploadQOne(3)"><h6>Attach</h6></div></a>
+                                        <div id="email-container">
+                                            <form id="email-form" method="post">
+                                                <div id="email-container-box">
+                                                    <input type="text" id="input-email-3" name="query" onfocus="emailContainerField('focus',3)" onblur="emailContainerField('blur',3)">
+                                                </div>
+                                        </div> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                </body>
+                </html>
